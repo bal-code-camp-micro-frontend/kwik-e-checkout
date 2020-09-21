@@ -1,0 +1,36 @@
+name: CI
+on:
+  push:
+    branches:    
+      - '*'
+jobs:
+  build_push_deploy:
+    name: Build, Push & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build & Push
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_REPO: balcodecampmicrofrontend/kwik-e-checkout
+        run: |
+          docker build -t $DOCKER_REPO:${{ github.sha }} .
+          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          docker push $DOCKER_REPO:${{ github.sha }}
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        env:
+          GITOPSCLI_TOKEN: ${{ secrets.GITOPSCLI_TOKEN }}
+        run: |
+          docker run --rm baloise/gitopscli:4.1.1 deploy \
+            --git-provider "github" \
+            --username "CAN BE ANYTHING IF USING GITHUB TOKEN" \
+            --password "$GITOPSCLI_TOKEN" \
+            --git-user "gitopscli" \
+            --git-email "gitopscli@baloise.dev" \
+            --organisation "bal-code-camp-micro-frontend" \
+            --repository-name "okd4-deployment" \
+            --file "kwik-e-checkout/values.yaml" \
+            --values "{frontend.image.tag: ${{ github.sha }}}"
