@@ -6,10 +6,33 @@ shoppingCartTemplate.innerHTML = `
 <link href="/c/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
 <script src="/c/js/materialize.js"></script>
 
-<span>
+<style>
+  a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    font-size: 1rem;
+    color: #fff;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+  }
+  i.material-icons {
+    height: 64px;
+    line-height: 64px;
+    display: block;
+    font-size: 24px;
+  }
+</style>
+
+<a href="/c/">
     <i class="material-icons left">shopping_cart</i>
     <span>Shopping cart</span>
-</span>`;
+</a>`;
 
 class ShoopingCart extends HTMLElement {
 
