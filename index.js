@@ -10,8 +10,6 @@ const { mockCheckoutCart } = require('./cart');
 const app = express()
 const port = 8080
 
-app.use(nocache())
-
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
     extname: '.hbs'
@@ -36,11 +34,12 @@ app.use('/', (req, res, next) => {
 
 const router = express.Router()
 router.use(express.static('public'))
-router.get('/', renderHome);
-router.get('/test', renderTest);
+router.get('/', nocache(), renderHome);
+router.get('/test', nocache(), renderTest);
 app.use('/c', router)
 
 const apiRouter = express.Router()
+apiRouter.use(nocache())
 apiRouter.get('/product', apiGetAllProducts)
 apiRouter.get('/product/:id', apiGetProduct)
 apiRouter.put('/product/:id', apiAddProduct)
