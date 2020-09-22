@@ -36,5 +36,5 @@ module.exports.addProduct = (userId, productId) => {
 
 module.exports.removeProduct = (userId, productId) => {
     const user = getUser(userId)
-    user.products.delete(productId)
+    user.products.delete(parseInt(productId, 10))
 }
