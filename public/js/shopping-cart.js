@@ -3,6 +3,11 @@ class ShoopingCart extends HTMLElement {
 
     connectedCallback() {
         this.render();
+        this.refresh()
+        window.addEventListener('c:cart:changed', () => this.refresh());
+    }
+
+    refresh() {
         fetch('/c/api/product')
             .then(response => response.json())
             .then(products => this.count = products.length)
@@ -17,6 +22,10 @@ class ShoopingCart extends HTMLElement {
                 <i class="material-icons left">shopping_cart</i>
                 Shopping cart ${counter}
             </span>`;
+    }
+
+    disconnectedCallback() {
+        window.removeEventListener('c:cart:changed', () => this.refresh());
     }
 }
     
