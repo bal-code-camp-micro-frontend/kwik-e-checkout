@@ -10,7 +10,7 @@ const getUser = (userId) => {
 }
 
 const findProduct = (productId) => {
-    return data.filter(d => d.id == productId)
+    return data.filter(d => d.id === parseInt(productId, 10))
 }
 
 module.exports.mockCheckoutCart = (userId) => {
@@ -28,9 +28,9 @@ module.exports.findProducts = (userId) => {
 
 module.exports.addProduct = (userId, productId) => {
     const user = getUser(userId)
-    const product = findProduct(productId)
+    const product = findProduct(parseInt(productId, 10))
     if (product.length > 0) {
-        user.products.set(productId, product[0])
+        user.products.set(parseInt(productId, 10), product[0])
     }
 }
 
