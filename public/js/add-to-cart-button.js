@@ -31,6 +31,10 @@ class AddToCartButton extends HTMLElement {
         return this.shadowRoot.querySelector("span");
     }
 
+    get icon() {
+        return this.shadowRoot.querySelector("i");
+    }
+
     connectedCallback() {       
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(addToCartButtonTemplate.content.cloneNode(true));
@@ -57,6 +61,7 @@ class AddToCartButton extends HTMLElement {
             .then(response => this.inCart = response.ok)
             .then(() => {
                 this.span.innerHTML = this.inCart ? "Remove from cart" : "Add to cart"
+                this.icon.innerHTML = this.inCart ? "remove_shopping_cart" : "add_shopping_cart"
                 if (this.filled) {
                     this.button.classList.remove("green")
                     this.button.classList.remove("red")
