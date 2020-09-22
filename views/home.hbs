@@ -3,6 +3,32 @@
 <div class="container">
     <h1>Checkout</h1>
 
+    {{#each products}}
+    <div class="col s12 m6 l4 xl3">
+        <div class="card medium">
+            <div class="card-image" style="max-height: 50%">
+                <img src="{{this.imageUrl}}" />
+            </div>
+            <div class="card-content">
+                <span class="card-title" style="font-size: 21px; ">{{this.name}}</span>
+                <p>CHF {{this.price}}</p><br>
+
+                <p><a href="/d/product/{{this.id}}">Detail</a></p>
+            </div>
+            <div class="card-action">
+                <a href="#">
+                    <i class="material-icons left">add_shopping_cart</i>
+                    Add to cart
+                </a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <h3>No Results</h3>
+    <img src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F05f43d38-e7c1-11e5-b34f-8cb8b003b8aa.jpg?crop=1429%2C804%2C45%2C12&resize=400"
+        alt="no-data" style="width: 400px;">
+    {{/each}}
+
 </div>
 
 {{> footer }}
