@@ -7,8 +7,9 @@ function toArray(map) {
 }
 
 module.exports.renderHome = (req, res) => {
+    const products = findProducts(req.session.userId)
     res.render('home', {
-        products: findProducts(req.session.userId)
+        products: toArray(products),
     });
 }
 
