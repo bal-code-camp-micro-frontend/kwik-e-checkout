@@ -3,6 +3,9 @@
 <div class="container">
     <h3>&lt;c-add-to-cart-button product-id="1"&gt;&lt;/c-add-to-cart-button&gt;</h3>
     <c-add-to-cart-button product-id="1"></c-add-to-cart-button>
+
+    <h3>&lt;c-add-to-cart-button product-id="2" filled="true"&gt;&lt;/c-add-to-cart-button&gt;</h3>
+    <c-add-to-cart-button product-id="2" filled="true"></c-add-to-cart-button>
     <script src="/c/js/add-to-cart-button.js" async></script>
 
     <h3>&lt;c-delete-cart-button product-id="1"&gt;&lt;/c-delete-cart-button&gt;</h3>
@@ -10,8 +13,13 @@
     <script src="/c/js/delete-cart-button.js" async></script>
 
     <h3>&lt;c-shopping-cart&gt;&lt;/c-shopping-cart&gt;</h3>
-    <c-shopping-cart></c-shopping-cart>
+    <nav>
+        <div class="nav-wrapper">
+            <c-shopping-cart></c-shopping-cart>
+        </div>
+    </nav>
     <script src="/c/js/shopping-cart.js" async></script>
+
 </div>
 
 {{> footer }}

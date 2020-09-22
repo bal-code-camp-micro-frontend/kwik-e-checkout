@@ -19,11 +19,22 @@ class AddToCartButton extends HTMLElement {
         return this.getAttribute('product-id');
     }
 
+    get filled() {
+        return this.getAttribute('filled') || false;
+    }
+
+    get button() {
+        return this.shadowRoot.querySelector("a");
+    }
+
     connectedCallback() {       
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(addToCartButtonTemplate.content.cloneNode(true));
-        const button = this.shadowRoot.querySelector("a");
-        button.addEventListener("click", () => this.toggleCart());
+        this.button.addEventListener("click", () => this.toggleCart());
+        if (this.filled) {
+            this.button.classList.remove("btn-flat")
+            this.button.classList.add("btn")
+        }
 
         window.addEventListener('c:cart:changed', e => {
             if (e.detail.productId == this.productId) {
@@ -61,7 +72,7 @@ class AddToCartButton extends HTMLElement {
     }
 
     disconnectedCallback() {
-        this.shadowRoot.querySelector("a").removeEventListener("click");
+        this.button.removeEventListener("click");
     }
 }
     
