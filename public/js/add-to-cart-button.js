@@ -57,7 +57,7 @@ class AddToCartButton extends HTMLElement {
     }
 
     refresh() {
-        fetch(`/c/api/product/${this.productId}`)
+        fetch(`/c/api/product/${this.productId}`, {method: "HEAD"})
             .then(response => this.inCart = response.ok)
             .then(() => {
                 this.span.innerHTML = this.inCart ? "Remove from cart" : "Add to cart"

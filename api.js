@@ -27,6 +27,15 @@ module.exports.apiGetProduct = (req, res) => {
     }
 }
 
+module.exports.apiHeadProduct = (req, res) => {
+    const products = findProducts(req.session.userId)
+    if (products.has(parseInt(req.params.id, 10))) {
+        res.send()
+    } else {
+        res.status(404).send()
+    }
+}
+
 module.exports.renderTest = (req, res) => {
     res.render('test', {});
 }

@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const { v4: uuidv4 } = require('uuid');
 const cookieSession = require('cookie-session')
 const nocache = require('nocache')
-const { renderHome, apiAddProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct, renderTest } = require('./api');
+const { renderHome, apiAddProduct, apiHeadProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct, renderTest } = require('./api');
 const { mockCheckoutCart } = require('./cart');
 const app = express()
 const port = 8080
@@ -42,6 +42,7 @@ const apiRouter = express.Router()
 apiRouter.use(nocache())
 apiRouter.get('/product', apiGetAllProducts)
 apiRouter.get('/product/:id', apiGetProduct)
+apiRouter.head('/product/:id', apiHeadProduct)
 apiRouter.put('/product/:id', apiAddProduct)
 apiRouter.delete('/product/:id', apiRemoveProduct)
 app.use('/c/api', apiRouter)
