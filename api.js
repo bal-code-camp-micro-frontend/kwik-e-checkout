@@ -1,14 +1,37 @@
-const { findProducts, addProduct } = require('./cart.js');
+const { findProducts, addProduct, removeProduct } = require('./cart.js');
+
+function toArray(map) {
+    const array = []
+    map.forEach(item => array.push(item))
+    return array
+}
 
 module.exports.renderHome = (req, res) => {
-    console.log(findProducts(req.session.userId))
     res.render('home', {
         products: findProducts(req.session.userId)
     });
 }
 
+module.exports.apiGetAllProducts = (req, res) => {
+    const products = findProducts(req.session.userId)
+    res.json(toArray(products))
+}
+
+module.exports.apiGetProduct = (req, res) => {
+    const products = findProducts(req.session.userId)
+    if (products.has(parseInt(req.params.id, 10))) {
+        res.json(products.get(parseInt(req.params.id, 10)))
+    } else {
+        res.status(404)
+    }
+}
+
 module.exports.apiAddProduct = (req, res) => {
-    console.log('addProduct', req.session.userId, req.params.id)
     addProduct(req.session.userId, req.params.id)
-    res.send('ok')
+    res.json()
+}
+
+module.exports.apiRemoveProduct = (req, res) => {
+    removeProduct(req.session.userId, req.params.id)
+    res.json()
 }

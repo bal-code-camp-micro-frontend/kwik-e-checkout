@@ -15,19 +15,21 @@ const findProduct = (productId) => {
 
 module.exports.mockCheckoutCart = (userId) => {
     const user = getUser(userId)
-    user.products.set(1, findProduct(1))
-    user.products.set(14, findProduct(14))
+    user.products.set(1, findProduct(1)[0])
+    user.products.set(14, findProduct(14)[0])
 }
 
 module.exports.findProducts = (userId) => {
     const user = getUser(userId)
-    console.log('findProducts =>', user.products)
     return user.products
 }
 
 module.exports.addProduct = (userId, productId) => {
     const user = getUser(userId)
-    user.products.set(productId, findProduct(productId))
+    const product = findProduct(productId)
+    if (product.length > 0) {
+        user.products.set(productId, product[0])
+    }
 }
 
 module.exports.removeProduct = (userId, productId) => {

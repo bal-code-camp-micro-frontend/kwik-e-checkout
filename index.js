@@ -4,7 +4,7 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const { v4: uuidv4 } = require('uuid');
 const cookieSession = require('cookie-session')
-const { renderHome, apiAddProduct } = require('./api');
+const { renderHome, apiAddProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct } = require('./api');
 const { addProduct, mockCheckoutCart } = require('./cart');
 const app = express()
 const port = 8080
@@ -39,7 +39,10 @@ router.get('/', renderHome);
 app.use('/c', router)
 
 const apiRouter = express.Router()
+apiRouter.get('/product', apiGetAllProducts)
+apiRouter.get('/product/:id', apiGetProduct)
 apiRouter.put('/product/:id', apiAddProduct)
+apiRouter.delete('/product/:id', apiRemoveProduct)
 app.use('/c/api', apiRouter)
 
 app.get('/healthz', (_, res) => res.send('ok'))
