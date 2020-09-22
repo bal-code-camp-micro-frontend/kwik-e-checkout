@@ -4,7 +4,7 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const { v4: uuidv4 } = require('uuid');
 const cookieSession = require('cookie-session')
-const { renderHome, apiAddProduct } = require('./api');
+const { renderHome, renderTest, apiAddProduct } = require('./api');
 const { addProduct, mockCheckoutCart } = require('./cart');
 const app = express()
 const port = 8080
@@ -36,6 +36,7 @@ app.use('/', (req, res, next) => {
 const router = express.Router()
 router.use(express.static('public'))
 router.get('/', renderHome);
+router.get('/test', renderTest);
 app.use('/c', router)
 
 const apiRouter = express.Router()
@@ -47,4 +48,5 @@ app.get('/healthz', (_, res) => res.send('ok'))
 app.listen(port, () => {
     console.log(`Healthz => http://localhost:${port}/healthz`)
     console.log(`Homepage => http://localhost:${port}/c`)
+    console.log(`Test Page => http://localhost:${port}/c/test`)
 })

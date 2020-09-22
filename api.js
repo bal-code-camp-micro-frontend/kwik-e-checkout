@@ -7,6 +7,10 @@ module.exports.renderHome = (req, res) => {
     });
 }
 
+module.exports.renderTest = (req, res) => {
+    res.render('test', {});
+}
+
 module.exports.apiAddProduct = (req, res) => {
     console.log('addProduct', req.session.userId, req.params.id)
     addProduct(req.session.userId, req.params.id)
