@@ -34,11 +34,11 @@ class DeleteCartButton extends HTMLElement {
                         detail: { productId: this.productId }
                     }));
                 } else {
-                    alert('Something went wrong:', response);
+                    console.error('Something went wrong:', response);
                 }
             })
             .catch(error => {
-                alert('Something went wrong:', error);
+                console.error('Something went wrong:', error);
             });
     }
 

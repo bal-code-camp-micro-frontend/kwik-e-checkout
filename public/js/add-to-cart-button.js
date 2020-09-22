@@ -73,7 +73,7 @@ class AddToCartButton extends HTMLElement {
                 } 
             })
             .catch(error => {
-                alert("oh no:", error)
+                console.error("oh no:", error)
             })
     }
 
@@ -90,7 +90,7 @@ class AddToCartButton extends HTMLElement {
                 }));
             })
             .catch(error => {
-                alert('Something went wrong:', error);
+                console.error('Something went wrong:', error);
             });
     }
 

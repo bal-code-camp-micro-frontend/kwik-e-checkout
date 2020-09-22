@@ -49,7 +49,7 @@ class ShoopingCart extends HTMLElement {
             .then(response => response.json())
             .then(products => products.length)
             .then(count => this.shadowRoot.querySelector("span").innerHTML = `Shopping cart (${count})`)
-            .catch(error => alert("d'oh!:", error))
+            .catch(error => console.error("d'oh!:", error))
     }
 
     disconnectedCallback() {
