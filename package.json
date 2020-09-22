@@ -1,0 +1,28 @@
+{
+  "name": "kwik-e-checkout",
+  "version": "1.0.0",
+  "description": "<https://kwik-e-checkout.apps.baloise.dev>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bal-code-camp-micro-frontend/kwik-e-checkout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bal-code-camp-micro-frontend/kwik-e-checkout/issues"
+  },
+  "homepage": "https://github.com/bal-code-camp-micro-frontend/kwik-e-checkout#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "nodemon": "^2.0.4"
+  }
+}

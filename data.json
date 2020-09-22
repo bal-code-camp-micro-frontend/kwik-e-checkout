@@ -3,187 +3,218 @@
     "id": 1,
     "type": "food",
     "name": "KrustyO's Ceral",
-    "imageUrl": "https://static.simpsonswiki.com/images/a/a9/Krusty-Os.jpg"
+    "imageUrl": "https://static.simpsonswiki.com/images/a/a9/Krusty-Os.jpg",
+    "price": "10.00"
   },
   {
     "id": 2,
     "type": "food",
-    "name": "Pink doughnut",
-    "imageUrl": "https://e7.pngegg.com/pngimages/961/150/png-clipart-pink-doughnut-illustration-donuts-coffee-and-doughnuts-gelatin-dessert-frosting-icing-bakery-simpsons-heroes-breakfast.png"
+    "name": "Count Branula",
+    "imageUrl": "https://static.simpsonswiki.com/images/2/24/Count_Branula.png",
+    "price": "10.00"
   },
   {
     "id": 3,
     "type": "drink",
     "name": "Logan's Rum",
-    "imageUrl": "https://static.simpsonswiki.com/images/e/ef/Logan%27s_Rum.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/e/ef/Logan%27s_Rum.png",
+    "price": "10.00"
   },
   {
     "id": 4,
     "type": "food",
     "name": "Almond Joy",
-    "imageUrl": "https://static.simpsonswiki.com/images/1/1e/Almond_Joy.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/1/1e/Almond_Joy.png",
+    "price": "10.00"
   },
   {
     "id": 5,
     "type": "food",
     "name": "Belfast Charms",
-    "imageUrl": "https://static.simpsonswiki.com/images/9/9c/Belfast_Charms.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/9/9c/Belfast_Charms.png",
+    "price": "10.00"
   },
   {
     "id": 6,
     "type": "food",
     "name": "Bran Cheks",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/e/e8/Bran_Cheks.png/500px-Bran_Cheks.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/e/e8/Bran_Cheks.png/500px-Bran_Cheks.png",
+    "price": "10.00"
   },
   {
     "id": 7,
     "type": "food",
     "name": "Bran Flakes",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/7/70/Bran_Flakes.png/500px-Bran_Flakes.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/7/70/Bran_Flakes.png/500px-Bran_Flakes.png",
+    "price": "10.00"
   },
   {
     "id": 8,
     "type": "food",
     "name": "Branny Charms",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/4/4d/Branny_Charms.png/500px-Branny_Charms.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/4/4d/Branny_Charms.png/500px-Branny_Charms.png",
+    "price": "10.00"
   },
   {
     "id": 9,
     "type": "drink",
     "name": "7 Up",
-    "imageUrl": "https://static.simpsonswiki.com/images/1/16/7_Up.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/1/16/7_Up.png",
+    "price": "10.00"
   },
   {
     "id": 10,
     "type": "drink",
     "name": "Buzz Cola",
-    "imageUrl": "https://static.simpsonswiki.com/images/3/3e/Buzz_Cola.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/3/3e/Buzz_Cola.png",
+    "price": "10.00"
   },
   {
     "id": 11,
     "type": "drink",
     "name": "Cherry Buzz Cola",
-    "imageUrl": "https://static.simpsonswiki.com/images/2/20/Cherry_Buzz_Cola.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/2/20/Cherry_Buzz_Cola.png",
+    "price": "10.00"
   },
   {
     "id": 12,
     "type": "food",
     "name": "N&N's",
-    "imageUrl": "https://static.simpsonswiki.com/images/2/2b/N%26N%27s.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/2/2b/N%26N%27s.png",
+    "price": "10.00"
   },
   {
     "id": 13,
     "type": "drink",
     "name": "Red Tots",
-    "imageUrl": "https://static.simpsonswiki.com/images/c/c5/Red_Tots.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/c/c5/Red_Tots.png",
+    "price": "10.00"
   },
   {
     "id": 14,
     "type": "food",
     "name": "Sugared Milk Chuds",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/9/95/Sugared_Milk_Chuds.png/500px-Sugared_Milk_Chuds.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/9/95/Sugared_Milk_Chuds.png/500px-Sugared_Milk_Chuds.png",
+    "price": "10.00"
   },
   {
     "id": 15,
     "type": "food",
     "name": "Krustaceans",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/d/dd/Krustaceans.png/500px-Krustaceans.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/d/dd/Krustaceans.png/500px-Krustaceans.png",
+    "price": "10.00"
   },
   {
     "id": 16,
     "type": "food",
     "name": "Chew 'Ems",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/c/c4/Chew_%27Ems.png/800px-Chew_%27Ems.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/c/c4/Chew_%27Ems.png/800px-Chew_%27Ems.png",
+    "price": "10.00"
   },
   {
     "id": 17,
     "type": "food",
     "name": "Butterfinger Ice Cream Nuggets",
-    "imageUrl": "https://static.simpsonswiki.com/images/5/59/Butterfinger_Ice_Cream_Nuggets.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/5/59/Butterfinger_Ice_Cream_Nuggets.png",
+    "price": "10.00"
   },
   {
     "id": 18,
     "type": "drink",
     "name": "Absolut Krusty",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/b/ba/Absolut_Krusty.png/500px-Absolut_Krusty.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/b/ba/Absolut_Krusty.png/500px-Absolut_Krusty.png",
+    "price": "10.00"
   },
   {
     "id": 19,
     "type": "drink",
     "name": "Amstel Blight",
-    "imageUrl": "https://static.simpsonswiki.com/images/7/7d/Amstel_Blight.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/7/7d/Amstel_Blight.png",
+    "price": "10.00"
   },
   {
     "id": 20,
     "type": "drink",
     "name": "Billy Beer",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/b/b2/Billy_Beer.png/500px-Billy_Beer.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/b/b2/Billy_Beer.png/500px-Billy_Beer.png",
+    "price": "10.00"
   },
   {
     "id": 21,
     "type": "drink",
     "name": "Bitter Brewer",
-    "imageUrl": "https://static.simpsonswiki.com/images/b/b8/Bitter_Brewer.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/b/b8/Bitter_Brewer.png",
+    "price": "10.00"
   },
   {
     "id": 22,
     "type": "drink",
     "name": "Brockton's Best",
-    "imageUrl": "https://static.simpsonswiki.com/images/a/a0/Brockton%E2%80%99s_Best.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/a/a0/Brockton%E2%80%99s_Best.png",
+    "price": "10.00"
   },
   {
     "id": 23,
     "type": "drink",
     "name": "Duff Beer",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/f/f7/Duff_Beer.png/400px-Duff_Beer.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/f/f7/Duff_Beer.png/400px-Duff_Beer.png",
+    "price": "10.00"
   },
   {
     "id": 24,
     "type": "drink",
     "name": "Crab Juice",
-    "imageUrl": "https://static.simpsonswiki.com/images/3/30/Crab_Juice_Hit_%26_Run.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/3/30/Crab_Juice_Hit_%26_Run.png",
+    "price": "10.00"
   },
   {
     "id": 25,
     "type": "drink",
     "name": "Golden Goose Vodka",
-    "imageUrl": "https://static.simpsonswiki.com/images/3/38/Golden_Goose_Vodka.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/3/38/Golden_Goose_Vodka.png",
+    "price": "10.00"
   },
   {
     "id": 26,
     "type": "drink",
     "name": "Grand Vin De Chateau Latour",
-    "imageUrl": "https://static.simpsonswiki.com/images/4/48/Grand_Vin_De_Chateau_Latour.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/4/48/Grand_Vin_De_Chateau_Latour.png",
+    "price": "10.00"
   },
   {
     "id": 27,
     "type": "drink",
     "name": "Moe et Chandon",
-    "imageUrl": "https://static.simpsonswiki.com/images/d/d1/Moe_et_Chandon.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/d/d1/Moe_et_Chandon.png",
+    "price": "10.00"
   },
   {
     "id": 28,
     "type": "drink",
     "name": "Motherless Child Brand Bourbon",
-    "imageUrl": "https://static.simpsonswiki.com/images/f/f0/Motherless_Child_Brand_Bourbon.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/f/f0/Motherless_Child_Brand_Bourbon.png",
+    "price": "10.00"
   },
   {
     "id": 29,
     "type": "drink",
     "name": "Pawtucket Patriot Ale",
-    "imageUrl": "https://static.simpsonswiki.com/images/b/bc/Pawtucket_Patriot_Ale.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/b/bc/Pawtucket_Patriot_Ale.png",
+    "price": "10.00"
   },
   {
     "id": 30,
     "type": "drink",
     "name": "Red Tick Beer",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/a/ad/RedTickBottle.png/800px-RedTickBottle.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/a/ad/RedTickBottle.png/800px-RedTickBottle.png",
+    "price": "10.00"
   },
   {
     "id": 31,
     "type": "drink",
     "name": "Thoroughbred's Choice Kentucky Bourbon",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/e/ea/Thoroughbred%27s_Choice_Kentucky_Bourbon.png/366px-Thoroughbred%27s_Choice_Kentucky_Bourbon.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/e/ea/Thoroughbred%27s_Choice_Kentucky_Bourbon.png/366px-Thoroughbred%27s_Choice_Kentucky_Bourbon.png",
+    "price": "10.00"
   },
   {
     "id": 32,
@@ -192,51 +223,44 @@
     "imageUrl": "https://static.simpsonswiki.com/images/7/70/Krusty_Beef_Jerky.jpg"
   },
   {
-    "id": 33,
-    "type": "food",
-    "name": "Krusty's Circus Style Marshmallows",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/f/f9/Krusty%27s_Circus_Style_Marshmallows.png/800px-Krusty%27s_Circus_Style_Marshmallows.png"
-  },
-  {
     "id": 34,
     "type": "food",
     "name": "Krusty's Maple Syrup",
-    "imageUrl": "https://static.simpsonswiki.com/images/3/3d/Krusty%27s_Maple_Syrup.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/3/3d/Krusty%27s_Maple_Syrup.png",
+    "price": "10.00"
   },
   {
     "id": 35,
     "type": "food",
     "name": "Krusty's Pancake Mix",
-    "imageUrl": "https://static.simpsonswiki.com/images/4/4b/Krusty%27s_Pancake_Mix.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/4/4b/Krusty%27s_Pancake_Mix.png",
+    "price": "10.00"
   },
   {
     "id": 36,
     "type": "food",
     "name": "Krusty's Sugar-Frosted Cotton-Candy Punch",
-    "imageUrl": "https://static.simpsonswiki.com/images/8/8d/Krusty%27s_Sugar-Frosted_Cotton-Candy_Punch.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/8/8d/Krusty%27s_Sugar-Frosted_Cotton-Candy_Punch.png",
+    "price": "10.00"
   },
   {
     "id": 37,
     "type": "food",
     "name": "Kwik-E-Fresh Chicken",
-    "imageUrl": "https://static.simpsonswiki.com/images/3/33/Kwik-E-Fresh_Chicken.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/3/33/Kwik-E-Fresh_Chicken.png",
+    "price": "10.00"
   },
   {
     "id": 38,
     "type": "food",
     "name": "Kwik-E-Kart",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/7/76/Kwik-E-Kart.png/500px-Kwik-E-Kart.png"
+    "imageUrl": "https://static.simpsonswiki.com/images/thumb/7/76/Kwik-E-Kart.png/500px-Kwik-E-Kart.png",
+    "price": "10.00"
   },
   {
     "id": 39,
     "type": "food",
     "name": "Cat Food",
     "imageUrl": "https://static.simpsonswiki.com/images/6/62/Cat_Food.jpg"
-  },
-  {
-    "id": 40,
-    "type": "food",
-    "name": "Count Branula",
-    "imageUrl": "https://static.simpsonswiki.com/images/2/24/Count_Branula.png"
   }
 ]
