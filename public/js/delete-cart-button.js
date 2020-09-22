@@ -25,7 +25,6 @@ class DeleteCartButton extends HTMLElement {
     }
 
     handleClick() {
-        console.log('click', this.productId)
         fetch(`/c/api/product/${this.productId}`, { method: "DELETE" })
             .then(response => {
                 if (response.ok) {
@@ -43,7 +42,7 @@ class DeleteCartButton extends HTMLElement {
 
 
     disconnectedCallback() {
-        button.removeEventListener("click", () => this.handleClick());
+        this.shadowRoot.querySelector("button").removeEventListener("click", () => this.handleClick());
     }
 }
 

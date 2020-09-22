@@ -25,6 +25,8 @@ class AddToCartButton extends HTMLElement {
         const button = this.shadowRoot.querySelector("a");
         button.addEventListener("click", () => this.toggleCart());
 
+        window.addEventListener('c:cart:changed', () => this.refresh());
+
         this.refresh()
     }
 
@@ -43,7 +45,6 @@ class AddToCartButton extends HTMLElement {
                 if (!response.ok) {
                     throw new Error('Not 2xx response')
                 }
-                this.refresh()
                 this.dispatchEvent(new CustomEvent('c:cart:changed', {
                     bubbles: true,
                 }));
@@ -54,7 +55,7 @@ class AddToCartButton extends HTMLElement {
     }
 
     disconnectedCallback() {
-        this.querySelector("a").removeEventListener("click");
+        this.shadowRoot.querySelector("a").removeEventListener("click");
     }
 }
     
