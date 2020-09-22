@@ -47,6 +47,4 @@ class DeleteCartButton extends HTMLElement {
     }
 }
 
-console.log('define c-delete-cart-button')
-
 customElements.define('c-delete-cart-button', DeleteCartButton);

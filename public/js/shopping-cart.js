@@ -16,7 +16,7 @@ class ShoopingCart extends HTMLElement {
     }
 
     render() {
-        const counter = this.count ? `(${this.count})` : ''
+        const counter = this.count !== undefined ? `(${this.count})` : ''
         this.innerHTML = `
             <span>
                 <i class="material-icons left">shopping_cart</i>
