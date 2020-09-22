@@ -1,5 +1,5 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const deleteCartButtonTemplate = document.createElement('template');
+deleteCartButtonTemplate.innerHTML = `
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -19,7 +19,7 @@ class DeleteCartButton extends HTMLElement {
 
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(deleteCartButtonTemplate.content.cloneNode(true));
         const button = this.shadowRoot.querySelector("button");
         button.addEventListener("click", () => this.handleClick());
     }

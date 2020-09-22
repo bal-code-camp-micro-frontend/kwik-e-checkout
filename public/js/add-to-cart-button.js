@@ -1,23 +1,40 @@
 
+const addToCartButtonTemplate = document.createElement('template');
+addToCartButtonTemplate.innerHTML = `
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<link href="/c/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<script src="/c/js/materialize.js"></script>
+
+<a class="waves-effect waves-teal btn-flat">
+    <i class="material-icons left">add_shopping_cart</i>
+    <span>Add to cart</span>
+</a>`;
+
 class AddToCartButton extends HTMLElement {
     inCart = false
-    productId = undefined
+
+    get productId() {
+        return this.getAttribute('product-id');
+    }
 
     connectedCallback() {       
-        this.productId = this.getAttribute("id");
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(addToCartButtonTemplate.content.cloneNode(true));
+        const button = this.shadowRoot.querySelector("a");
+        button.addEventListener("click", () => this.toggleCart());
 
-        this.render()
         this.refresh()
     }
 
     refresh() {
         fetch(`/c/api/product/${this.productId}`)
             .then(response => this.inCart = response.ok)
-            .then(() => this.render())
+            .then(() => this.shadowRoot.querySelector("span").innerHTML = this.inCart ? "Remove from cart" : "Add to cart")
             .catch(error => {
                 alert("oh no:", error)
             })
-           
     }
 
     toggleCart() {
@@ -34,16 +51,6 @@ class AddToCartButton extends HTMLElement {
             .catch(error => {
                 alert('Something went wrong:', error);
             });
-    }
-
-    render() {
-        const text = this.inCart ? 'Remove from cart' : 'Add to cart'
-        this.innerHTML = `
-            <a class="waves-effect waves-teal btn-flat">
-                <i class="material-icons left">add_shopping_cart</i>
-                ${text}
-            </a>`;
-        this.querySelector("a").addEventListener("click", () => this.toggleCart());
     }
 
     disconnectedCallback() {
