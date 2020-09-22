@@ -23,7 +23,7 @@ module.exports.apiGetProduct = (req, res) => {
     if (products.has(parseInt(req.params.id, 10))) {
         res.json(products.get(parseInt(req.params.id, 10)))
     } else {
-        res.status(404)
+        res.status(404).send('Not found')
     }
 }
 
