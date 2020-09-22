@@ -26,6 +26,10 @@ module.exports.apiGetProduct = (req, res) => {
     }
 }
 
+module.exports.renderTest = (req, res) => {
+    res.render('test', {});
+}
+
 module.exports.apiAddProduct = (req, res) => {
     addProduct(req.session.userId, req.params.id)
     res.json()
