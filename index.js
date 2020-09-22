@@ -4,10 +4,13 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const { v4: uuidv4 } = require('uuid');
 const cookieSession = require('cookie-session')
+const nocache = require('nocache')
 const { renderHome, apiAddProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct, renderTest } = require('./api');
-const { addProduct, mockCheckoutCart } = require('./cart');
+const { mockCheckoutCart } = require('./cart');
 const app = express()
 const port = 8080
+
+app.use(nocache())
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
@@ -26,10 +29,8 @@ app.use(cookieSession({
 app.use('/', (req, res, next) => {
     if (!req.session.userId) {
         req.session.userId = uuidv4()
-        addProduct(req.session.userId, 1)
-        addProduct(req.session.userId, 2)
+        mockCheckoutCart(req.session.userId)
     }
-    mockCheckoutCart(req.session.userId)
     next()
 })
 

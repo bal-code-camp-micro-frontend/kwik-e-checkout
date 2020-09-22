@@ -1,5 +1,9 @@
 {{> header }}
 
+<script>
+    {{!-- window.addEventListener('c:cart:changed', () => location.reload()); --}}
+</script>
+
 <div class="container">
     <h1>Shopping Cart ({{products.length}})</h1>
     <ul class="collection" style="margin-bottom: 60px;">
@@ -9,10 +13,7 @@
             <img src="{{this.imageUrl}}" alt="" class="circle">
             <span class="title"><b>{{this.name}}</b></span>
             <p>CHF {{this.price}}</p>
-            <button href="#!" class="waves-effect waves-light btn secondary-content red" alt="remove">
-                <i class="material-icons left ">remove_shopping_cart</i>
-                Remove
-            </button>
+            <c-delete-cart-button class="secondary-content" product-id="{{this.id}}"></c-delete-cart-button>
         </li>
         {{else}}
         <h3>No Results</h3>

@@ -17,6 +17,8 @@ module.exports.mockCheckoutCart = (userId) => {
     const user = getUser(userId)
     user.products.set(1, findProduct(1)[0])
     user.products.set(14, findProduct(14)[0])
+    user.products.set(22, findProduct(22)[0])
+    user.products.set(34, findProduct(34)[0])
 }
 
 module.exports.findProducts = (userId) => {
