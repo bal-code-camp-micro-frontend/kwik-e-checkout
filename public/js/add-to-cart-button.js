@@ -47,6 +47,7 @@ class AddToCartButton extends HTMLElement {
                 }
                 this.dispatchEvent(new CustomEvent('c:cart:changed', {
                     bubbles: true,
+                    composed: true
                 }));
             })
             .catch(error => {

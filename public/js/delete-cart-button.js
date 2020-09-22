@@ -30,6 +30,7 @@ class DeleteCartButton extends HTMLElement {
                 if (response.ok) {
                     this.dispatchEvent(new CustomEvent('c:cart:changed', {
                         bubbles: true,
+                        composed: true
                     }));
                 } else {
                     alert('Something went wrong:', response);
