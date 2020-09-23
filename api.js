@@ -13,6 +13,14 @@ module.exports.renderHome = (req, res) => {
     });
 }
 
+module.exports.renderCheckoutTestShell = (req, res) => {
+    const products = findProducts(req.session.userId)
+    res.render('checkout', {
+        layout: 'plain',
+        products: toArray(products),
+    });
+}
+
 module.exports.apiGetAllProducts = (req, res) => {
     const products = findProducts(req.session.userId)
     res.json(toArray(products))

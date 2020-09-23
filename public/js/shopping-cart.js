@@ -29,7 +29,7 @@ shoppingCartTemplate.innerHTML = `
   }
 </style>
 
-<a href="/c/">
+<a href="/checkout">
     <i class="material-icons left">shopping_cart</i>
     <span>Shopping cart</span>
 </a>`;

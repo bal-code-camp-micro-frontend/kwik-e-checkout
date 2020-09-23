@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const { v4: uuidv4 } = require('uuid');
 const cookieSession = require('cookie-session')
 const nocache = require('nocache')
-const { renderHome, apiAddProduct, apiHeadProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct, renderTest } = require('./api');
+const { renderHome, apiAddProduct, apiHeadProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct, renderTest, renderCheckoutTestShell} = require('./api');
 const { mockCheckoutCart } = require('./cart');
 const app = express()
 const port = 8080
@@ -49,8 +49,11 @@ app.use('/c/api', apiRouter)
 
 app.get('/healthz', (_, res) => res.send('ok'))
 
+app.get('/checkout', nocache(), renderCheckoutTestShell);
+
 app.listen(port, () => {
     console.log(`Healthz => http://localhost:${port}/healthz`)
     console.log(`Homepage => http://localhost:${port}/c`)
     console.log(`Test Page => http://localhost:${port}/c/test`)
+    console.log(`Test App Shell => http://localhost:${port}/checkout`)
 })
