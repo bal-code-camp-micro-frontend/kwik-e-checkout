@@ -41,7 +41,9 @@ class ShoopingCart extends HTMLElement {
         this.shadowRoot.appendChild(shoppingCartTemplate.content.cloneNode(true));
 
         this.refresh()
-        window.addEventListener('c:cart:changed', () => this.refresh());
+
+        this.refreshCallback = () => this.refresh()
+        window.addEventListener('c:cart:changed', this.refreshCallback);
     }
 
     refresh() {
@@ -53,7 +55,7 @@ class ShoopingCart extends HTMLElement {
     }
 
     disconnectedCallback() {
-        window.removeEventListener('c:cart:changed', () => this.refresh());
+        window.removeEventListener('c:cart:changed', this.refreshCallback);
     }
 }
     

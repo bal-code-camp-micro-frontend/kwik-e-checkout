@@ -117,7 +117,8 @@ class CheckoutPages extends HTMLElement {
         this.render([])
         this.refresh()
 
-        window.addEventListener('c:cart:changed', () => this.refresh());
+        this.refreshCallback = () => this.refresh()
+        window.addEventListener('c:cart:changed', this.refreshCallback);
     }
 
     refresh() {
@@ -128,6 +129,10 @@ class CheckoutPages extends HTMLElement {
 
     render(products) {
         render(checkoutPageHtml(products), this.shadowRoot);
+    }
+
+    disconnectedCallback() {
+        window.removeEventListener('c:cart:changed', this.refreshCallback);
     }
 }
     

@@ -47,11 +47,13 @@ class AddToCartButton extends HTMLElement {
             this.button.classList.add("green")
         } 
 
-        window.addEventListener('c:cart:changed', e => {
+
+        this.refreshCallback = (e) => {
             if (e.detail.productId == this.productId) {
                 this.refresh()
             }
-        });
+        };
+        window.addEventListener('c:cart:changed', this.refreshCallback);
 
         this.refresh()
     }
@@ -96,6 +98,7 @@ class AddToCartButton extends HTMLElement {
 
     disconnectedCallback() {
         this.button.removeEventListener("click");
+        window.removeEventListener('c:cart:changed', this.refreshCallback);
     }
 }
     
