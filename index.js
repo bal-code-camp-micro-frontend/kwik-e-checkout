@@ -49,7 +49,7 @@ app.use('/c/api', apiRouter)
 
 app.get('/healthz', (_, res) => res.send('ok'))
 
-app.get('/checkout', nocache(), renderCheckoutTestShell);
+app.get('/checkout*', nocache(), renderCheckoutTestShell);
 
 app.listen(port, () => {
     console.log(`Healthz => http://localhost:${port}/healthz`)

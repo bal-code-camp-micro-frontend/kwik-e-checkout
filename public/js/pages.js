@@ -82,7 +82,7 @@ const checkoutFooterHtml = html`
     </footer>
 `
 
-const checkoutPageHtml = (products) => html`
+const checkoutPageHtml = (products, confirm, checkoutHandler) => html`
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="/c/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="/c/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -90,21 +90,38 @@ const checkoutPageHtml = (products) => html`
     ${checkoutNavHtml}
 
     <div class="container">
-        <h1>Shopping Cart (${products.length})</h1>
-        <ul class="collection" style="margin-bottom: 60px;">
-            ${products.length > 0 ? products.map((product) => html`
-                <li class="collection-item avatar">
-                    <img src="${product.imageUrl}" alt="" class="circle">
-                    <span class="title"><b>${product.name}</b></span>
-                    <p>CHF ${product.price}</p>
-                    <c-delete-cart-button class="secondary-content" product-id="${product.id}"></c-delete-cart-button>
-                </li>
-            `) : html`
-                <h3>No Results</h3>
-                <img src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F05f43d38-e7c1-11e5-b34f-8cb8b003b8aa.jpg?crop=1429%2C804%2C45%2C12&resize=400"
-                    alt="no-data" style="width: 400px;">
-            `}
-        </ul>
+        ${confirm ? html`
+            <h1>Checkout successful!</h1>
+            <img src="https://media1.giphy.com/media/pHXhJbxIPg7fJnEcbq/source.gif" alt="no-data" style="width: 400px">
+            <p>
+                <a onclick="window.history.back()"class="waves-effect waves-teal btn blue">
+                    <i class="material-icons left">arrow_back</i>
+                    <span>back</span>
+                </a>
+            </p>
+        ` : html`
+            <h1>Shopping Cart (${products.length})</h1>
+            <ul class="collection" style="margin-bottom: 60px;">
+                ${products.length > 0 ? products.map((product) => html`
+                    <li class="collection-item avatar">
+                        <img src="${product.imageUrl}" alt="" class="circle">
+                        <span class="title"><b>${product.name}</b></span>
+                        <p>CHF ${product.price}</p>
+                        <c-delete-cart-button class="secondary-content" product-id="${product.id}"></c-delete-cart-button>
+                    </li>
+                `) : html`
+                    <h3>No Results</h3>
+                    <img src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F05f43d38-e7c1-11e5-b34f-8cb8b003b8aa.jpg?crop=1429%2C804%2C45%2C12&resize=400"
+                        alt="no-data" style="width: 400px;">
+                `}
+            </ul>
+            <p>
+                <a @click="${checkoutHandler}" class="waves-effect waves-teal btn blue" ?disabled=${products.length < 1}>
+                    <i class="material-icons left">shopping_cart</i>
+                    <span>checkout</span>
+                </a>
+            </p>
+        `}
     </div>
 
     ${checkoutFooterHtml}
@@ -112,27 +129,62 @@ const checkoutPageHtml = (products) => html`
 
 class CheckoutPages extends HTMLElement {
 
+    products = []
+
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
-        this.render([])
+        this.render()
         this.refresh()
 
         this.refreshCallback = () => this.refresh()
         window.addEventListener('c:cart:changed', this.refreshCallback);
+
+        this.unlisten = window.appHistory.listen(location =>
+            this.render(location)
+        );
     }
 
     refresh() {
         fetch('/c/api/product')
             .then(response => response.json())
-            .then(products => this.render(products))
+            .then(products => this.products = products)
+            .then(() => this.render())
     }
 
-    render(products) {
-        render(checkoutPageHtml(products), this.shadowRoot);
+    render(location) {
+        location = location || window.location
+        const confirm = location.pathname.startsWith('/checkout/confirm')
+        render(checkoutPageHtml(this.products, confirm, () => this.deleteAllProductsAndGoToConfirmPage()), this.shadowRoot);
+    }
+
+    deleteAllProductsAndGoToConfirmPage() {
+        if (this.products.length === 0) {
+            console.log("all deleted")
+            window.appHistory.push("/checkout/confirm");
+        } else {
+            fetch(`/c/api/product/${this.products[0].id}`, { method: "DELETE" })
+                .then(response => {
+                    if (response.ok) {
+                        this.dispatchEvent(new CustomEvent('c:cart:changed', {
+                            bubbles: true,
+                            composed: true,
+                            detail: { productId: this.products[0].id }
+                        }));
+                        this.products.shift() // remove first item
+                        this.deleteAllProductsAndGoToConfirmPage() // recurse
+                    } else {
+                        console.error('Something went wrong:', response);
+                    }
+                })
+                .catch(error => {
+                    console.error('Something went wrong:', error);
+                });
+        }
     }
 
     disconnectedCallback() {
         window.removeEventListener('c:cart:changed', this.refreshCallback);
+        this.unlisten();
     }
 }
     
