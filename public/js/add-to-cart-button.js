@@ -59,8 +59,9 @@ class AddToCartButton extends HTMLElement {
         this.refresh()
     }
 
+    static get observedAttributes() {return ['product-id']; }
+
     attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
-        console.log("attributeChangedCallback", attributeName, oldValue, newValue, namespace)
         if (attributeName === 'product-id') {
             this.refresh()
         }
