@@ -58,7 +58,16 @@ class AddToCartButton extends HTMLElement {
         this.refresh()
     }
 
+    attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
+        if (attributeName === 'product-id') {
+            this.refresh()
+        }
+    }
+
     refresh() {
+        if (this.productId === undefined) {
+            return
+        }
         fetch(`/c/api/product/${this.productId}`, {method: "HEAD"})
             .then(response => this.inCart = response.ok)
             .then(() => {
