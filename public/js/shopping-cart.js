@@ -44,6 +44,18 @@ class ShoopingCart extends HTMLElement {
 
         this.refreshCallback = () => this.refresh()
         window.addEventListener('c:cart:changed', this.refreshCallback);
+
+
+        const a = this.shadowRoot.querySelector("a");
+        a.addEventListener("click", (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          window.dispatchEvent(new CustomEvent('a:location:changed', {
+            bubbles: true,
+            composed: true,
+            detail: { href: a.getAttribute("href") }
+          }));
+        })
     }
 
     refresh() {
