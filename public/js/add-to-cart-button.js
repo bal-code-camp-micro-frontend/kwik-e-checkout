@@ -38,7 +38,8 @@ class AddToCartButton extends HTMLElement {
     connectedCallback() {       
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(addToCartButtonTemplate.content.cloneNode(true));
-        this.button.addEventListener("click", () => this.toggleCart());
+        this.buttonCallback = () => this.toggleCart()
+        this.button.addEventListener("click", this.buttonCallback);
         if (this.filled) {
             this.button.classList.remove("btn-flat")
             this.button.classList.add("btn")
@@ -106,7 +107,7 @@ class AddToCartButton extends HTMLElement {
     }
 
     disconnectedCallback() {
-        this.button.removeEventListener("click");
+        this.button.removeEventListener("click", this.buttonCallback);
         window.removeEventListener('c:cart:changed', this.refreshCallback);
     }
 }
