@@ -38,21 +38,21 @@
     "id": 6,
     "type": "food",
     "name": "Bran Cheks",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/e/e8/Bran_Cheks.png/500px-Bran_Cheks.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/e/e8/Bran_Cheks.png",
     "price": "7.00"
   },
   {
     "id": 7,
     "type": "food",
     "name": "Bran Flakes",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/7/70/Bran_Flakes.png/500px-Bran_Flakes.png",
+    "imageUrl": "https://static.simpsonswiki.com/images//7/70/Bran_Flakes.png",
     "price": "8.00"
   },
   {
     "id": 8,
     "type": "food",
     "name": "Branny Charms",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/4/4d/Branny_Charms.png/500px-Branny_Charms.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/4/4d/Branny_Charms.png",
     "price": "8.00"
   },
   {
@@ -94,21 +94,21 @@
     "id": 14,
     "type": "food",
     "name": "Sugared Milk Chuds",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/9/95/Sugared_Milk_Chuds.png/500px-Sugared_Milk_Chuds.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/9/95/Sugared_Milk_Chuds.png",
     "price": "7.00"
   },
   {
     "id": 15,
     "type": "food",
     "name": "Krustaceans",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/d/dd/Krustaceans.png/500px-Krustaceans.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/d/dd/Krustaceans.png",
     "price": "11.00"
   },
   {
     "id": 16,
     "type": "food",
     "name": "Chew 'Ems",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/c/c4/Chew_%27Ems.png/800px-Chew_%27Ems.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/c/c4/Chew_%27Ems.png",
     "price": "6.00"
   },
   {
@@ -122,7 +122,7 @@
     "id": 18,
     "type": "drink",
     "name": "Absolut Krusty",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/b/ba/Absolut_Krusty.png/500px-Absolut_Krusty.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/b/ba/Absolut_Krusty.png",
     "price": "11.00"
   },
   {
@@ -136,7 +136,7 @@
     "id": 20,
     "type": "drink",
     "name": "Billy Beer",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/b/b2/Billy_Beer.png/500px-Billy_Beer.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/b/b2/Billy_Beer.png",
     "price": "6.00"
   },
   {
@@ -157,7 +157,7 @@
     "id": 23,
     "type": "drink",
     "name": "Duff Beer",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/f/f7/Duff_Beer.png/400px-Duff_Beer.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/f/f7/Duff_Beer.png",
     "price": "3.00"
   },
   {
@@ -206,14 +206,14 @@
     "id": 30,
     "type": "drink",
     "name": "Red Tick Beer",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/a/ad/RedTickBottle.png/800px-RedTickBottle.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/a/ad/RedTickBottle.png",
     "price": "6.00"
   },
   {
     "id": 31,
     "type": "drink",
     "name": "Thoroughbred's Choice Kentucky Bourbon",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/e/ea/Thoroughbred%27s_Choice_Kentucky_Bourbon.png/366px-Thoroughbred%27s_Choice_Kentucky_Bourbon.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/e/ea/Thoroughbred%27s_Choice_Kentucky_Bourbon.png",
     "price": "17.00"
   },
   {
@@ -255,7 +255,7 @@
     "id": 38,
     "type": "food",
     "name": "Kwik-E-Kart",
-    "imageUrl": "https://static.simpsonswiki.com/images/thumb/7/76/Kwik-E-Kart.png/500px-Kwik-E-Kart.png",
+    "imageUrl": "https://static.simpsonswiki.com/images/7/76/Kwik-E-Kart.png",
     "price": "9.00"
   },
   {

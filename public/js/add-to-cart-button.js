@@ -38,7 +38,8 @@ class AddToCartButton extends HTMLElement {
     connectedCallback() {       
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(addToCartButtonTemplate.content.cloneNode(true));
-        this.button.addEventListener("click", () => this.toggleCart());
+        this.buttonCallback = () => this.toggleCart()
+        this.button.addEventListener("click", this.buttonCallback);
         if (this.filled) {
             this.button.classList.remove("btn-flat")
             this.button.classList.add("btn")
@@ -47,16 +48,29 @@ class AddToCartButton extends HTMLElement {
             this.button.classList.add("green")
         } 
 
-        window.addEventListener('c:cart:changed', e => {
+
+        this.refreshCallback = (e) => {
             if (e.detail.productId == this.productId) {
                 this.refresh()
             }
-        });
+        };
+        window.addEventListener('c:cart:changed', this.refreshCallback);
 
         this.refresh()
     }
 
+    static get observedAttributes() {return ['product-id']; }
+
+    attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
+        if (attributeName === 'product-id') {
+            this.refresh()
+        }
+    }
+
     refresh() {
+        if (this.productId === undefined || this.productId === null) {
+            return
+        }
         fetch(`/c/api/product/${this.productId}`, {method: "HEAD"})
             .then(response => this.inCart = response.ok)
             .then(() => {
@@ -95,7 +109,8 @@ class AddToCartButton extends HTMLElement {
     }
 
     disconnectedCallback() {
-        this.button.removeEventListener("click");
+        this.button.removeEventListener("click", this.buttonCallback);
+        window.removeEventListener('c:cart:changed', this.refreshCallback);
     }
 }
     
