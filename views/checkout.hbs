@@ -10,6 +10,11 @@
     <c-pages></c-pages>
   </body>
   <script>
+      document.addEventListener("a:location:changed", (e) => {
+        if (e.detail.href) {
+          window.appHistory.push(href);
+        }
+      });
       window.appHistory = window.History.createBrowserHistory();
   </script>
 </html>
