@@ -60,6 +60,7 @@ class AddToCartButton extends HTMLElement {
     }
 
     attributeChangedCallback(attributeName, oldValue, newValue, namespace) {
+        console.log("attributeChangedCallback", attributeName, oldValue, newValue, namespace)
         if (attributeName === 'product-id') {
             this.refresh()
         }
