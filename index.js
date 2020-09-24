@@ -8,7 +8,7 @@ const nocache = require('nocache')
 const { renderHome, apiAddProduct, apiHeadProduct, apiGetProduct, apiGetAllProducts, apiRemoveProduct, renderTest } = require('./api');
 const { mockCheckoutCart } = require('./cart');
 const app = express()
-const port = 8080
+const port = 3002
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
