@@ -68,7 +68,7 @@ class AddToCartButton extends HTMLElement {
     }
 
     refresh() {
-        if (this.productId === undefined) {
+        if (this.productId === undefined || this.productId === null) {
             return
         }
         fetch(`/c/api/product/${this.productId}`, {method: "HEAD"})
