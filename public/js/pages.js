@@ -160,7 +160,11 @@ class CheckoutPages extends HTMLElement {
     deleteAllProductsAndGoToConfirmPage() {
         if (this.products.length === 0) {
             console.log("all deleted")
-            window.appHistory.push("/checkout/confirm");
+            this.dispatchEvent(new CustomEvent('a:location:changed', {
+                bubbles: true,
+                composed: true,
+                detail: { href: "/checkout/confirm" }
+            }));
         } else {
             fetch(`/c/api/product/${this.products[0].id}`, { method: "DELETE" })
                 .then(response => {
